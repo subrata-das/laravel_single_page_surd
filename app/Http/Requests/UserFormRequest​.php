@@ -24,7 +24,7 @@ class UserFormRequest​ extends FormRequest
     public function rules()
     {
         return [
-            'full_name' => 'required|alpha_dash|max:80|min:3',
+            'full_name' => 'required|max:80|min:3|regex:/^[\pL\s\-]+$/u',
             'email' => 'required|email|max:80|min:3',
             'mobile' => 'required|numeric|digits:10',
             'country_code' => 'required|integer',
